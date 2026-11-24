@@ -1,0 +1,1108 @@
+{
+  "RF Originales": [
+    [
+      "REQUISITOS FUNCIONALES ORIGINALES – AutoMétrica (SIGTM)",
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "ID",
+      "Requisito Funcional",
+      "Prioridad",
+      "Módulo Relacionado",
+      "Historia de Usuario"
+    ],
+    [
+      "RF01",
+      "El sistema debe permitir registrar usuarios.",
+      "Alta",
+      "Autenticación",
+      "HU01"
+    ],
+    [
+      "RF02",
+      "El sistema debe permitir iniciar sesión mediante correo y contraseña.",
+      "Alta",
+      "Autenticación",
+      "HU02"
+    ],
+    [
+      "RF03",
+      "El sistema debe gestionar los roles de usuario (Cliente y Mecánico).",
+      "Alta",
+      "Autenticación",
+      "HU18"
+    ],
+    [
+      "RF04",
+      "El sistema debe permitir registrar vehículos.",
+      "Alta",
+      "Vehículos",
+      "HU03"
+    ],
+    [
+      "RF05",
+      "El sistema debe asociar vehículos a clientes.",
+      "Alta",
+      "Vehículos",
+      "HU03"
+    ],
+    [
+      "RF06",
+      "El sistema debe permitir crear órdenes de servicio.",
+      "Alta",
+      "Órdenes de Servicio",
+      "HU04"
+    ],
+    [
+      "RF07",
+      "El sistema debe registrar diagnósticos técnicos.",
+      "Alta",
+      "Diagnósticos",
+      "HU05"
+    ],
+    [
+      "RF08",
+      "El sistema debe permitir registrar piezas utilizadas en una reparación.",
+      "Media",
+      "Inventario / Piezas",
+      "HU06"
+    ],
+    [
+      "RF09",
+      "El sistema debe almacenar costos asociados a cada intervención.",
+      "Media",
+      "Costos / Facturación",
+      "HU06, HU13"
+    ],
+    [
+      "RF10",
+      "El sistema debe permitir actualizar el estado del servicio.",
+      "Alta",
+      "Órdenes de Servicio",
+      "HU04, HU07"
+    ],
+    [
+      "RF11",
+      "El cliente debe poder consultar el estado de su vehículo.",
+      "Alta",
+      "Seguimiento",
+      "HU07"
+    ],
+    [
+      "RF12",
+      "El sistema debe permitir visualizar el historial de mantenimientos.",
+      "Media",
+      "Seguimiento",
+      "HU08"
+    ],
+    [
+      "RF13",
+      "El administrador debe poder actualizar la información registrada.",
+      "Media",
+      "Administración",
+      "HU09, HU10"
+    ],
+    [
+      "RF14",
+      "El administrador debe poder eliminar registros cuando sea necesario.",
+      "Baja",
+      "Administración",
+      "HU18"
+    ]
+  ],
+  "RF Subdivididos": [
+    [
+      "SUBDIVISIÓN DE REQUISITOS FUNCIONALES – AutoMétrica (v3.1 Ampliado)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "RF Original",
+      "Sub-ID",
+      "Nombre",
+      "Descripción Detallada",
+      "Prioridad",
+      "Historia de Usuario"
+    ],
+    [
+      "RF01",
+      "RF01.1",
+      "Formulario de registro",
+      "El sistema debe presentar un formulario de registro solicitando: nombre completo, correo electrónico, contraseña y confirmación de contraseña.",
+      "Alta",
+      "HU01"
+    ],
+    [
+      "RF01",
+      "RF01.2",
+      "Validación de datos de registro",
+      "El sistema debe validar que el correo no esté registrado previamente, que la contraseña cumpla requisitos mínimos de seguridad (mín. 8 caracteres, al menos una mayúscula y un número) y que todos los campos obligatorios estén completos.",
+      "Alta",
+      "HU01"
+    ],
+    [
+      "RF03",
+      "RF03.1",
+      "Asignación de rol al registrarse",
+      "El sistema debe permitir seleccionar el rol del usuario (Cliente o Mecánico) durante el proceso de registro.",
+      "Alta",
+      "HU18"
+    ],
+    [
+      "RF03",
+      "RF03.2",
+      "Restricción de funcionalidades por rol",
+      "El sistema debe restringir las funciones visibles y accesibles según el rol asignado al usuario autenticado.",
+      "Alta",
+      "HU18"
+    ],
+    [
+      "RF06",
+      "RF06.1",
+      "Creación de la orden de servicio",
+      "El mecánico debe poder crear una orden de servicio asociándola a un vehículo registrado, incluyendo la fecha de ingreso y una descripción del motivo de la visita.",
+      "Alta",
+      "HU04"
+    ],
+    [
+      "RF06",
+      "RF06.2",
+      "Asignación de estado inicial",
+      "Al crear la orden, el sistema debe asignar automáticamente el estado \"Recibido\" y registrar la fecha y hora de creación.",
+      "Alta",
+      "HU04"
+    ],
+    [
+      "RF08",
+      "RF08.1",
+      "Selección de piezas del inventario",
+      "El mecánico debe poder seleccionar piezas del inventario existente para asociarlas a una orden de servicio.",
+      "Media",
+      "HU06"
+    ],
+    [
+      "RF08",
+      "RF08.2",
+      "Registro de cantidad y costo",
+      "El sistema debe permitir registrar la cantidad utilizada de cada pieza y calcular automáticamente el subtotal con base en el costo unitario.",
+      "Media",
+      "HU06"
+    ],
+    [
+      "RF10",
+      "RF10.1",
+      "Cambio de estado de la orden",
+      "El mecánico debe poder cambiar el estado de una orden siguiendo el flujo: Recibido -> En diagnóstico -> En reparación -> Listo para entrega -> Entregado.",
+      "Alta",
+      "HU07"
+    ],
+    [
+      "RF10",
+      "RF10.2",
+      "Registro de historial de estados",
+      "El sistema debe almacenar un log con cada cambio de estado, incluyendo la fecha, hora y el usuario que realizó el cambio.",
+      "Media",
+      "HU07"
+    ],
+    [
+      "RF13",
+      "RF13.1",
+      "Edición de datos de clientes",
+      "El administrador o mecánico debe poder editar los datos personales de un cliente (nombre, teléfono, correo, documento).",
+      "Media",
+      "HU09"
+    ],
+    [
+      "RF13",
+      "RF13.2",
+      "Edición de datos de vehículos",
+      "El administrador o mecánico debe poder editar los datos de un vehículo registrado (placa, marca, modelo, año, color).",
+      "Media",
+      "HU10"
+    ],
+    [
+      "RF15",
+      "RF15.1",
+      "Solicitud de restablecimiento de contraseña",
+      "El sistema debe enviar un correo electrónico con un enlace que contiene un token único y expirable para restablecer la contraseña.",
+      "Alta",
+      "HU01"
+    ],
+    [
+      "RF15",
+      "RF15.2",
+      "Verificación de token y cambio de clave",
+      "El sistema debe verificar la validez del token y permitir ingresar la nueva contraseña cumpliendo las políticas de seguridad.",
+      "Alta",
+      "HU01"
+    ],
+    [
+      "RF17",
+      "RF17.1",
+      "Cálculo en tiempo real de KPI de órdenes",
+      "El sistema debe calcular dinámicamente el total de órdenes activas, completadas en el mes e ingresos generados.",
+      "Media",
+      "HU19"
+    ],
+    [
+      "RF17",
+      "RF17.2",
+      "Visualización gráfica de tendencias",
+      "El sistema debe renderizar gráficos estadísticos de ingresos y rendimiento operativo del taller.",
+      "Media",
+      "HU19"
+    ],
+    [
+      "RF20",
+      "RF20.1",
+      "Generación de PDF para Órdenes y Presupuestos",
+      "El sistema debe generar un documento PDF formal con membrete del taller para órdenes de servicio y presupuestos.",
+      "Media",
+      "HU19"
+    ],
+    [
+      "RF20",
+      "RF20.2",
+      "Generación de PDF para Facturación",
+      "El sistema debe generar un documento PDF de factura de venta detallando mano de obra, repuestos e impuestos.",
+      "Media",
+      "HU16"
+    ],
+    [
+      "RF23",
+      "RF23.1",
+      "Configuración de umbral mínimo de stock",
+      "El sistema debe permitir definir la cantidad mínima requerida para cada repuesto del inventario.",
+      "Alta",
+      "HU21"
+    ],
+    [
+      "RF23",
+      "RF23.2",
+      "Emisión de alertas de inventario bajo",
+      "El sistema debe mostrar indicadores de alerta en el panel de control y enviar notificaciones cuando un ítem esté bajo el mínimo.",
+      "Alta",
+      "HU21"
+    ],
+    [
+      "RF25",
+      "RF25.1",
+      "Encuesta de calificación tras entrega",
+      "El cliente debe recibir un formulario para valorar el servicio (1 a 5 estrellas) y redactar observaciones.",
+      "Media",
+      "HU23"
+    ],
+    [
+      "RF25",
+      "RF25.2",
+      "Reporte consolidado de satisfacción",
+      "El sistema debe calcular el promedio de satisfacción global y por mecánico para la gestión de calidad.",
+      "Media",
+      "HU23"
+    ],
+    [
+      "RF31",
+      "RF31.1",
+      "Búsqueda reactiva en tablas",
+      "El sistema debe actualizar la tabla de datos en tiempo real a medida que el usuario escribe en la barra de búsqueda.",
+      "Alta",
+      "HU29"
+    ],
+    [
+      "RF32",
+      "RF32.1",
+      "Conmutación rápida de vistas por estado",
+      "El usuario puede presionar botones de estado para filtrar al instante la lista de órdenes activas.",
+      "Alta",
+      "HU30"
+    ],
+    [
+      "RF33",
+      "RF33.1",
+      "Actualización dinámica de tarjetas KPI",
+      "Las tarjetas numéricas resumen el estado del taller consumiendo datos directamente de la API.",
+      "Alta",
+      "HU31"
+    ],
+    [
+      "RF34",
+      "RF34.1",
+      "Inicio de sesión asistido en un clic",
+      "Los botones de acceso rápido rellenan credenciales para ingresar velozmente en demostraciones.",
+      "Media",
+      "HU32"
+    ],
+    [
+      "RF35",
+      "RF35.1",
+      "Ajuste de estilo de impresión de reportes",
+      "Al presionar imprimir, la plataforma oculta menús laterales y formatea la vista limpia para PDF.",
+      "Media",
+      "HU33"
+    ],
+    [
+      "RF36",
+      "RF36.1",
+      "Selector desplegable de estado en línea",
+      "La tabla de reparaciones incluye un control desplegable para cambiar el estado de la orden sin cambiar de pantalla.",
+      "Alta",
+      "HU34"
+    ]
+  ],
+  "RF Adicionales": [
+    [
+      "REQUISITOS FUNCIONALES ADICIONALES Y NUEVOS PARA SUSTENTACIÓN – AutoMétrica (RF15 a RF36)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "ID",
+      "Nombre",
+      "Descripción",
+      "Justificación Técnica / Demostración",
+      "Prioridad",
+      "Historia de Usuario"
+    ],
+    [
+      "RF15",
+      "Recuperación de contraseña",
+      "El sistema debe permitir al usuario recuperar su contraseña mediante un enlace de restablecimiento enviado a su correo electrónico registrado.",
+      "Sin esta funcionalidad, un usuario que olvide su contraseña quedaría bloqueado del sistema permanentemente.",
+      "Alta",
+      "HU01"
+    ],
+    [
+      "RF16",
+      "Cierre de sesión seguro",
+      "El sistema debe permitir al usuario cerrar sesión de manera segura, invalidando el token de autenticación activo.",
+      "Es un requisito de seguridad básico. Sin cierre de sesión, cualquier persona con acceso al navegador podría operar con la sesión anterior.",
+      "Alta",
+      "HU02"
+    ],
+    [
+      "RF17",
+      "Dashboard de métricas para el administrador",
+      "El sistema debe mostrar un panel de control con métricas clave: total de órdenes activas, órdenes completadas del mes, ingresos estimados y mecánicos disponibles.",
+      "Permite al administrador tomar decisiones informadas rápidamente sin consultar reportes detallados.",
+      "Media",
+      "HU19"
+    ],
+    [
+      "RF18",
+      "Búsqueda y filtrado de órdenes de servicio",
+      "El sistema debe permitir buscar órdenes de servicio por número de orden, placa del vehículo, nombre del cliente o estado actual. Debe permitir filtrar por rango de fechas.",
+      "En un taller con volumen alto, encontrar una orden sin filtros sería extremadamente ineficiente.",
+      "Media",
+      "HU04"
+    ],
+    [
+      "RF19",
+      "Registro fotográfico del vehículo",
+      "El mecánico debe poder adjuntar fotografías del vehículo al momento de la recepción y durante la reparación, asociándolas a la orden de servicio.",
+      "Las evidencias fotográficas generan confianza y protegen al taller ante reclamaciones sobre daños preexistentes.",
+      "Baja",
+      "HU05"
+    ],
+    [
+      "RF20",
+      "Exportación de reportes a PDF",
+      "El sistema debe permitir exportar reportes de órdenes de servicio, facturas y presupuestos en formato PDF para descarga e impresión.",
+      "Requisito operativo estándar. Los clientes y contadores necesitan documentos formales para sus registros.",
+      "Media",
+      "HU19"
+    ],
+    [
+      "RF21",
+      "Notificación por cambio de estado",
+      "El sistema debe notificar automáticamente al cliente (vía correo o notificación en plataforma) cuando el estado de su orden cambie.",
+      "Mejora la experiencia del cliente y reduce las llamadas al taller para preguntar por el estado del vehículo.",
+      "Media",
+      "HU20"
+    ],
+    [
+      "RF22",
+      "Registro de garantía de servicio",
+      "El mecánico debe poder registrar el periodo de garantía asociado a una reparación o pieza instalada, con fecha de inicio y vencimiento.",
+      "Protege al taller y al cliente. Permite gestionar reclamaciones de garantía de manera organizada.",
+      "Baja",
+      "HU06"
+    ],
+    [
+      "RF23",
+      "Control de Stock Mínimo y Alertas de Repuestos",
+      "El sistema debe generar alertas visuales y notificaciones automáticas cuando las existencias de un repuesto estén por debajo del umbral mínimo configurado.",
+      "Evita el desabastecimiento de repuestos críticos y los consecuentes retrasos en las entregas de vehículos.",
+      "Alta",
+      "HU21"
+    ],
+    [
+      "RF24",
+      "Programación y Recordatorios de Mantenimiento Preventivo",
+      "El sistema debe calcular y programar fechas sugeridas de mantenimiento preventivo (aceite, frenos, distribución) basándose en el historial y kilometraje, enviando recordatorios al cliente.",
+      "Aumenta la fidelización del cliente y promueve el cuidado oportuno de los vehículos atendidos.",
+      "Media",
+      "HU22"
+    ],
+    [
+      "RF25",
+      "Evaluación de Calificación y Comentarios del Servicio (Feedback)",
+      "El cliente debe poder calificar de 1 a 5 estrellas la atención recibida y redactar observaciones al finalizar la orden de servicio.",
+      "Permite medir el nivel de satisfacción del cliente y evaluar la calidad del desempeño del personal técnico.",
+      "Media",
+      "HU23"
+    ],
+    [
+      "RF26",
+      "Gestión de Proveedores y Órdenes de Compra de Repuestos",
+      "El sistema debe permitir registrar proveedores de repuestos y crear órdenes de compra para gestionar el reabastecimiento del inventario.",
+      "Formaliza la relación con proveedores y optimiza la trazabilidad de costos de compra de insumos.",
+      "Media",
+      "HU24"
+    ],
+    [
+      "RF27",
+      "Control de Tiempos de Reparación y Productividad por Mecánico",
+      "El sistema debe permitir cronometrar el tiempo de inicio y fin de cada intervención técnica para calcular el tiempo real de mano de obra invertido.",
+      "Suministra datos precisos para calcular costos de mano de obra y medir el rendimiento de los mecánicos.",
+      "Media",
+      "HU25"
+    ],
+    [
+      "RF28",
+      "Auditoría y Historial de Actividad del Sistema (Audit Log)",
+      "El sistema debe mantener un registro inmutable con sello de tiempo, usuario y acción realizada para operaciones sensibles (eliminaciones, cambios de precios y roles).",
+      "Garantiza la trazabilidad, transparencia y cumplimiento de estándares de seguridad en la administración del sistema.",
+      "Alta",
+      "HU26"
+    ],
+    [
+      "RF29",
+      "Gestión de Descuentos y Promociones en Presupuestos/Facturas",
+      "El sistema debe permitir aplicar descuentos porcentuales o montos fijos en repuestos y mano de obra al generar presupuestos o facturas.",
+      "Brinda flexibilidad comercial al taller para ofrecer promociones o atención preferencial a clientes frecuentes.",
+      "Baja",
+      "HU27"
+    ],
+    [
+      "RF30",
+      "Gestión Multi-Sede / Sucursales del Taller",
+      "El sistema debe permitir parametrizar y filtrar usuarios, inventario y órdenes de servicio por sede o sucursal del taller.",
+      "Permite la escalabilidad del sistema cuando la empresa opere con más de un establecimiento físico.",
+      "Baja",
+      "HU28"
+    ],
+    [
+      "RF31",
+      "Buscador Rápido en Tiempo Real",
+      "El sistema debe permitir buscar clientes o vehículos escribiendo las primeras letras en una barra de búsqueda que filtra al instante sin recargar la página.",
+      "Facilísimo de demostrar: se prueba en 2 segundos escribiendo una placa en las pantallas de Vehículos o Clientes.",
+      "Alta",
+      "HU29"
+    ],
+    [
+      "RF32",
+      "Filtros Rápidos por Estado de Reparación",
+      "El sistema debe ofrecer botones de filtrado rápido para ver sólo órdenes Recibidas, En Reparación o Finalizadas con un clic.",
+      "Facilísimo de demostrar: se prueba presionando las pestañas de colores en la vista de Reparaciones.",
+      "Alta",
+      "HU30"
+    ],
+    [
+      "RF33",
+      "Tarjetas KPI Destacadas en Pantalla Principal",
+      "El sistema debe mostrar tarjetas numéricas resumen (Órdenes Activas, En Reparación, Vehículos y Clientes) al ingresar al panel.",
+      "Facilísimo de demostrar: es lo primero que ven los instructores al ingresar al sistema.",
+      "Alta",
+      "HU31"
+    ],
+    [
+      "RF34",
+      "Acceso Rápido de Demostración (1-Clic)",
+      "El sistema debe proporcionar botones preconfigurados en el formulario de login para autenticar usuarios demo (Admin, Mecánico, Cliente) al instante.",
+      "Facilísimo de demostrar: permite mostrar el sistema sin perder tiempo escribiendo contraseñas.",
+      "Media",
+      "HU32"
+    ],
+    [
+      "RF35",
+      "Exportador e Impresor de Reportes",
+      "El sistema debe incluir un botón de exportación que formatea la pantalla y abre la ventana de impresión limpia / guardar como PDF del navegador.",
+      "Facilísimo de demostrar: se prueba con un clic en el botón 'Exportar / Imprimir Reporte' en la pantalla de Reportes.",
+      "Media",
+      "HU33"
+    ],
+    [
+      "RF36",
+      "Cambio Directo de Estado de Servicio",
+      "El sistema debe permitir al mecánico seleccionar y actualizar el estado de una orden directamente desde una lista desplegable en la tabla.",
+      "Facilísimo de demostrar: se cambia la opción del selector en la columna 'Cambiar Estado' de la tabla de Reparaciones.",
+      "Alta",
+      "HU34"
+    ]
+  ],
+  "Trazabilidad": [
+    [
+      "MATRIZ DE TRAZABILIDAD COMPLETA RF <-> HISTORIAS DE USUARIO (RF01 a RF36)",
+      null,
+      null,
+      null
+    ],
+    [
+      "Requisito",
+      "Historia de Usuario",
+      "Funcionalidad",
+      "Tipo"
+    ],
+    [
+      "RF01",
+      "HU01",
+      "Registro de usuario",
+      "Original"
+    ],
+    [
+      "RF02",
+      "HU02",
+      "Inicio de sesión",
+      "Original"
+    ],
+    [
+      "RF03",
+      "HU18",
+      "Gestión de roles y usuarios",
+      "Original"
+    ],
+    [
+      "RF04",
+      "HU03",
+      "Registro de vehículo",
+      "Original"
+    ],
+    [
+      "RF05",
+      "HU03",
+      "Asociación vehículo-cliente",
+      "Original"
+    ],
+    [
+      "RF06",
+      "HU04",
+      "Creación de orden de servicio",
+      "Original"
+    ],
+    [
+      "RF07",
+      "HU05",
+      "Registro de diagnóstico",
+      "Original"
+    ],
+    [
+      "RF08",
+      "HU06",
+      "Registro de piezas utilizadas",
+      "Original"
+    ],
+    [
+      "RF09",
+      "HU13",
+      "Costos de intervención y presupuesto",
+      "Original"
+    ],
+    [
+      "RF10",
+      "HU07",
+      "Actualización de estado de servicio",
+      "Original"
+    ],
+    [
+      "RF11",
+      "HU07",
+      "Consulta de estado del vehículo",
+      "Original"
+    ],
+    [
+      "RF12",
+      "HU08",
+      "Historial de mantenimientos",
+      "Original"
+    ],
+    [
+      "RF13",
+      "HU09",
+      "Gestión y consulta de clientes",
+      "Original"
+    ],
+    [
+      "RF14",
+      "HU18",
+      "Eliminación de registros",
+      "Original"
+    ],
+    [
+      "RF15",
+      "HU01",
+      "Recuperación de contraseña",
+      "Sugerido"
+    ],
+    [
+      "RF16",
+      "HU02",
+      "Cierre de sesión seguro",
+      "Sugerido"
+    ],
+    [
+      "RF17",
+      "HU19",
+      "Dashboard de métricas",
+      "Sugerido"
+    ],
+    [
+      "RF18",
+      "HU04",
+      "Búsqueda y filtrado de órdenes",
+      "Sugerido"
+    ],
+    [
+      "RF19",
+      "HU05",
+      "Registro fotográfico",
+      "Sugerido"
+    ],
+    [
+      "RF20",
+      "HU19",
+      "Exportación a PDF",
+      "Sugerido"
+    ],
+    [
+      "RF21",
+      "HU20",
+      "Notificación por cambio de estado",
+      "Sugerido"
+    ],
+    [
+      "RF22",
+      "HU06",
+      "Garantía de servicio",
+      "Sugerido"
+    ],
+    [
+      "RF23",
+      "HU21",
+      "Control de Stock Mínimo y Alertas de Repuestos",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF24",
+      "HU22",
+      "Recordatorios de Mantenimiento Preventivo",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF25",
+      "HU23",
+      "Calificación y Comentarios del Servicio",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF26",
+      "HU24",
+      "Gestión de Proveedores y Órdenes de Compra",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF27",
+      "HU25",
+      "Control de Tiempos y Productividad por Mecánico",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF28",
+      "HU26",
+      "Auditoría e Historial de Actividad (Audit Log)",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF29",
+      "HU27",
+      "Gestión de Descuentos en Presupuestos/Facturas",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF30",
+      "HU28",
+      "Gestión Multi-Sede / Sucursales del Taller",
+      "Nuevo (v3)"
+    ],
+    [
+      "RF31",
+      "HU29",
+      "Buscador Rápido en Tiempo Real",
+      "Sustentación (v3.1)"
+    ],
+    [
+      "RF32",
+      "HU30",
+      "Filtros Rápidos por Estado de Reparación",
+      "Sustentación (v3.1)"
+    ],
+    [
+      "RF33",
+      "HU31",
+      "Tarjetas KPI Destacadas en Pantalla Principal",
+      "Sustentación (v3.1)"
+    ],
+    [
+      "RF34",
+      "HU32",
+      "Acceso Rápido de Demostración (1-Clic)",
+      "Sustentación (v3.1)"
+    ],
+    [
+      "RF35",
+      "HU33",
+      "Exportador e Impresor de Reportes",
+      "Sustentación (v3.1)"
+    ],
+    [
+      "RF36",
+      "HU34",
+      "Cambio Directo de Estado de Servicio",
+      "Sustentación (v3.1)"
+    ]
+  ],
+  "Historias de Usuario": [
+    [
+      "HISTORIAS DE USUARIO COMPLETAS – AutoMétrica (Método INVEST, HU01 a HU34)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "ID",
+      "Nombre",
+      "Como...",
+      "Quiero...",
+      "Para...",
+      "Criterios de Aceptación",
+      "Puntos"
+    ],
+    [
+      "HU01",
+      "Registro de Usuario",
+      "Como nuevo usuario",
+      "Quiero registrarme en la plataforma",
+      "Para acceder a los servicios del sistema.",
+      "Debe solicitar nombre, correo, contraseña y rol.\nDebe validar que el correo no exista.",
+      "3"
+    ],
+    [
+      "HU02",
+      "Inicio de Sesión",
+      "Como usuario registrado",
+      "Quiero iniciar sesión",
+      "Para acceder a mis funciones dentro del sistema.",
+      "Validar credenciales.\nMostrar mensaje de error si son incorrectas.",
+      "2"
+    ],
+    [
+      "HU03",
+      "Registro de Vehículo",
+      "Como mecánico",
+      "Quiero registrar vehículos",
+      "Para asociarlos a un cliente.",
+      "Registrar placa.\nRegistrar marca.\nRegistrar modelo.",
+      "5"
+    ],
+    [
+      "HU04",
+      "Crear Orden de Servicio",
+      "Como mecánico",
+      "Quiero crear órdenes de servicio",
+      "Para llevar seguimiento a las reparaciones.",
+      "Asociar la orden a un vehículo.\nRegistrar la fecha de ingreso.\nDefinir el estado inicial de la orden.",
+      "5"
+    ],
+    [
+      "HU05",
+      "Registrar Diagnóstico",
+      "Como mecánico",
+      "Quiero registrar diagnósticos",
+      "Para informar el estado del vehículo.",
+      "Registrar observaciones del diagnóstico.\nAsociar el diagnóstico a una orden de servicio.\nGuardar la fecha del diagnóstico.",
+      "3"
+    ],
+    [
+      "HU06",
+      "Registrar Piezas",
+      "Como mecánico",
+      "Quiero registrar piezas utilizadas",
+      "Para justificar los costos de reparación.",
+      "Asociar las piezas a una orden de servicio.\nRegistrar cantidad utilizada.\nRegistrar costo unitario.",
+      "5"
+    ],
+    [
+      "HU07",
+      "Consultar Estado",
+      "Como cliente",
+      "Quiero visualizar el estado de mi vehículo",
+      "Para conocer el avance de la reparación.",
+      "Visualizar el estado actual de la orden.\nMostrar la fecha de actualización.\nMostrar el porcentaje de avance.",
+      "5"
+    ],
+    [
+      "HU08",
+      "Consultar Historial",
+      "Como cliente",
+      "Quiero consultar mantenimientos anteriores",
+      "Para conocer las intervenciones realizadas.",
+      "Visualizar mantenimientos anteriores.\nMostrar fecha y detalle de cada intervención.\nPermitir búsqueda por vehículo.",
+      "3"
+    ],
+    [
+      "HU09",
+      "Gestionar Clientes",
+      "Como mecánico",
+      "Quiero registrar y actualizar la información de los clientes",
+      "Para mantener sus datos organizados y asociados a sus vehículos.",
+      "Registrar nombre completo, teléfono, correo y documento.\nEditar la información del cliente.\nBuscar clientes por nombre o documento.",
+      "3"
+    ],
+    [
+      "HU10",
+      "Consultar Información del Cliente",
+      "Como mecánico",
+      "Quiero consultar la información de un cliente",
+      "Para acceder rápidamente a sus datos y vehículos asociados.",
+      "Visualizar datos personales del cliente.\nMostrar los vehículos asociados.\nPermitir la búsqueda por nombre o documento.",
+      "2"
+    ],
+    [
+      "HU11",
+      "Programar Citas",
+      "Como cliente",
+      "Quiero solicitar una cita para el mantenimiento de mi vehículo",
+      "Para asegurar la atención en una fecha específica.",
+      "Seleccionar fecha y hora disponibles.\nAsociar la cita a un vehículo registrado.\nConfirmar la solicitud de la cita.",
+      "5"
+    ],
+    [
+      "HU12",
+      "Gestionar Agenda de Citas",
+      "Como mecánico",
+      "Quiero visualizar y administrar las citas programadas",
+      "Para organizar la carga de trabajo del taller.",
+      "Visualizar las citas del día.\nCambiar el estado de una cita.\nReprogramar o cancelar citas.",
+      "5"
+    ],
+    [
+      "HU13",
+      "Generar Presupuesto",
+      "Como mecánico",
+      "Quiero generar un presupuesto de reparación",
+      "Para informar al cliente sobre los costos estimados.",
+      "Incluir mano de obra y piezas.\nCalcular el costo total.\nAsociar el presupuesto a una orden de servicio.",
+      "5"
+    ],
+    [
+      "HU14",
+      "Aprobar Presupuesto",
+      "Como cliente",
+      "Quiero aprobar o rechazar un presupuesto",
+      "Para autorizar la reparación de mi vehículo.",
+      "Visualizar el detalle del presupuesto.\nRegistrar la aprobación o el rechazo.\nNotificar la decisión al mecánico.",
+      "3"
+    ],
+    [
+      "HU15",
+      "Gestionar Inventario",
+      "Como administrador del taller",
+      "Quiero administrar el inventario de piezas",
+      "Para controlar la disponibilidad de los repuestos.",
+      "Registrar nuevas piezas.\nActualizar cantidades disponibles.\nEliminar piezas inactivas.",
+      "5"
+    ],
+    [
+      "HU16",
+      "Generar Factura",
+      "Como mecánico",
+      "Quiero generar una factura al finalizar una reparación",
+      "Para formalizar el cobro del servicio.",
+      "Incluir mano de obra y piezas utilizadas.\nCalcular impuestos y total a pagar.\nAsociar la factura a una orden de servicio.",
+      "5"
+    ],
+    [
+      "HU17",
+      "Registrar Pago",
+      "Como administrador del taller",
+      "Quiero registrar el pago de una factura",
+      "Para llevar el control financiero del servicio.",
+      "Registrar el valor pagado.\nRegistrar el método de pago.\nActualizar el estado de la factura.",
+      "3"
+    ],
+    [
+      "HU18",
+      "Gestionar Usuarios",
+      "Como administrador",
+      "Quiero administrar los usuarios del sistema",
+      "Para controlar el acceso a la plataforma.",
+      "Crear, editar y desactivar usuarios.\nAsignar roles y permisos.\nVisualizar el listado de usuarios.",
+      "5"
+    ],
+    [
+      "HU19",
+      "Generar Reportes",
+      "Como administrador",
+      "Quiero generar reportes del taller",
+      "Para analizar el rendimiento del negocio.",
+      "Consultar ingresos por periodo.\nVisualizar servicios realizados.\nExportar los reportes.",
+      "5"
+    ],
+    [
+      "HU20",
+      "Enviar Notificaciones",
+      "Como sistema",
+      "Quiero enviar notificaciones automáticas a los clientes",
+      "Para mantenerlos informados sobre el estado de sus vehículos.",
+      "Notificar cambios en el estado de la orden.\nEnviar recordatorios de citas.\nConfirmar la finalización de la reparación.",
+      "3"
+    ],
+    [
+      "HU21",
+      "Alertas de Stock Mínimo",
+      "Como administrador del taller",
+      "Quiero recibir alertas de stock mínimo de repuestos",
+      "Para reabastecer inventario a tiempo y evitar retrasos.",
+      "Permitir configurar stock mínimo por pieza.\nGenerar alerta visual en dashboard y notificación por correo cuando se alcance el mínimo.",
+      "5"
+    ],
+    [
+      "HU22",
+      "Recordatorios Mantenimiento Preventivo",
+      "Como cliente",
+      "Quiero recibir recordatorios automáticos de mantenimiento preventivo",
+      "Para realizar servicios a tiempo según tiempo o kilometraje.",
+      "Calcular fecha sugerida basada en historial de servicios.\nEnviar correo recordatorio al cliente 7 días antes de la fecha sugerida.",
+      "3"
+    ],
+    [
+      "HU23",
+      "Calificación y Feedback del Servicio",
+      "Como cliente",
+      "Quiero calificar el servicio y dejar comentarios",
+      "Para retroalimentar la atención prestada por el taller.",
+      "Habilitar encuesta tras marcar la orden como Entregada.\nPermitir elegir de 1 a 5 estrellas y escribir comentario.\nConsolidar métricas de satisfacción.",
+      "3"
+    ],
+    [
+      "HU24",
+      "Gestión de Proveedores y Compras",
+      "Como administrador del taller",
+      "Quiero registrar proveedores y órdenes de compra",
+      "Para gestionar los pedidos de insumos y repuestos.",
+      "Registrar datos de contacto de proveedores.\nCrear órdenes de compra indicando piezas y cantidades.\nActualizar stock al recibir la mercancía.",
+      "5"
+    ],
+    [
+      "HU25",
+      "Registro de Tiempos de Reparación",
+      "Como mecánico",
+      "Quiero registrar el tiempo de inicio y fin de cada tarea",
+      "Para medir la mano de obra exacta invertida.",
+      "Botón de Iniciar y Finalizar tarea en la orden de servicio.\nCalcular el tiempo total trabajado por mecánico.",
+      "3"
+    ],
+    [
+      "HU26",
+      "Auditoría del Sistema (Audit Log)",
+      "Como administrador",
+      "Quiero consultar el historial de auditoría del sistema",
+      "Para supervisar las acciones sensibles ejecutadas por los usuarios.",
+      "Registrar timestamp, usuario, IP y detalle de eliminaciones, cambios de rol y precios.\nPermitir filtrar logs por rango de fechas y usuario.",
+      "5"
+    ],
+    [
+      "HU27",
+      "Gestión de Descuentos",
+      "Como mecánico o administrador",
+      "Quiero aplicar descuentos en presupuestos y facturas",
+      "Para ofrecer promociones y atención preferencial.",
+      "Permitir ingresar un porcentaje o valor fijo de descuento.\nRecalcular automáticamente el total de la orden o factura.",
+      "2"
+    ],
+    [
+      "HU28",
+      "Gestión Multi-Sede",
+      "Como administrador general",
+      "Quiero administrar múltiples sedes del taller",
+      "Para clasificar inventarios, clientes y órdenes por sucursal.",
+      "Registrar sedes con dirección y teléfono.\nAsignar usuarios y vehículos a sedes específicas.\nFiltrar reportes por sede.",
+      "5"
+    ],
+    [
+      "HU29",
+      "Búsqueda Rápida en Tiempo Real",
+      "Como usuario",
+      "Quiero buscar clientes o vehículos escribiendo en la barra de búsqueda",
+      "Para filtrar la información al instante sin recargar la página.",
+      "Buscador reactivo en tiempo real por texto.\nFiltrado dinámico en la tabla.",
+      "2"
+    ],
+    [
+      "HU30",
+      "Filtros Rápidos por Estado",
+      "Como mecánico",
+      "Quiero filtrar órdenes pulsando pestañas de estado",
+      "Para ver rápidamente sólo los vehículos en la etapa seleccionada.",
+      "Botones de filtro rápido por estado.\nActualización dinámica de la lista.",
+      "2"
+    ],
+    [
+      "HU31",
+      "Métricas Destacadas KPI",
+      "Como administrador",
+      "Quiero ver tarjetas de métricas numéricas en el inicio del panel",
+      "Para conocer el estado operativo del taller en 3 segundos.",
+      "Tarjetas con íconos y números en tiempo real.\nVisualización de órdenes activas, vehículos y clientes.",
+      "3"
+    ],
+    [
+      "HU32",
+      "Login Asistido 1-Clic",
+      "Como usuario en sustentación",
+      "Quiero ingresar con botones demo preconfigurados",
+      "Para autenticarme velozmente sin escribir contraseñas.",
+      "Botones de Admin, Mecánico y Cliente.\nRelleno automático e inicio de sesión en 1 clic.",
+      "1"
+    ],
+    [
+      "HU33",
+      "Impresión Limpia de Reportes",
+      "Como administrador",
+      "Quiero imprimir o guardar reportes en PDF con un botón",
+      "Para entregar documentos limpios y formales.",
+      "Botón de exportar/imprimir reporte.\nOcultamiento automático de barras de navegación al imprimir.",
+      "3"
+    ],
+    [
+      "HU34",
+      "Cambio Directo de Estado de Servicio",
+      "Como mecánico",
+      "Quiero cambiar el estado de una orden desde el menú desplegable de la tabla",
+      "Para actualizar el avance del servicio con un solo clic.",
+      "Selector de estados en cada fila de la tabla.\nActualización inmediata en el backend.",
+      "3"
+    ]
+  ]
+}
