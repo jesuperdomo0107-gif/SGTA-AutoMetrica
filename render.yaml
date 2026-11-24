@@ -6,7 +6,7 @@ services:
     plan: free
     rootDir: autometrica-full/backend
     buildCommand: "./build.sh"
-    startCommand: "gunicorn app.main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+    startCommand: "python init_prod.py && gunicorn app.main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
     envVars:
       - key: ENVIRONMENT
         value: production
