@@ -12,3 +12,5 @@ pytest
 httpx
 python-docx
 gunicorn
+
+psycopg[binary]
